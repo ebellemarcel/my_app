@@ -1,0 +1,14 @@
+security:
+    # ...
+
+    role_hierarchy:
+        ROLE_AGENT: ROLE_USER
+        ROLE_ADMIN: [ROLE_AGENT, ROLE_ALLOWED_TO_SWITCH]
+
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/users, roles: ROLE_ADMIN }
+        - { path: ^/proprietes/new, roles: ROLE_AGENT }
+        - { path: ^/proprietes/\d+/edit, roles: ROLE_AGENT }
+        - { path: ^/accessoires, roles: ROLE_AGENT }
+        - { path: ^/contact, roles: ROLE_AGENT }

@@ -1,0 +1,138 @@
+# config/routes.yaml
+
+# Routes pour User
+user_index:
+    path: /users
+    controller: App\Controller\UserController::index
+    methods: GET
+    defaults:
+        _role: ROLE_ADMIN
+
+user_new:
+    path: /users/new
+    controller: App\Controller\UserController::new
+    methods: [GET, POST]
+    defaults:
+        _role: ROLE_ADMIN
+
+user_show:
+    path: /users/{id}
+    controller: App\Controller\UserController::show
+    methods: GET
+    defaults:
+        _role: ROLE_ADMIN
+
+user_edit:
+    path: /users/{id}/edit
+    controller: App\Controller\UserController::edit
+    methods: [GET, POST]
+    defaults:
+        _role: ROLE_ADMIN
+
+user_delete:
+    path: /users/{id}
+    controller: App\Controller\UserController::delete
+    methods: DELETE
+    defaults:
+        _role: ROLE_ADMIN
+
+# Routes pour Propriete
+propriete_index:
+    path: /proprietes
+    controller: App\Controller\ProprieteController::index
+    methods: GET
+
+propriete_new:
+    path: /proprietes/new
+    controller: App\Controller\ProprieteController::new
+    methods: [GET, POST]
+    defaults:
+        _role: ROLE_AGENT
+
+propriete_show:
+    path: /proprietes/{id}
+    controller: App\Controller\ProprieteController::show
+    methods: GET
+
+propriete_edit:
+    path: /proprietes/{id}/edit
+    controller: App\Controller\ProprieteController::edit
+    methods: [GET, POST]
+    defaults:
+        _role: ROLE_AGENT
+
+propriete_delete:
+    path: /proprietes/{id}
+    controller: App\Controller\ProprieteController::delete
+    methods: DELETE
+    defaults:
+        _role: ROLE_AGENT
+
+# Routes pour Accessoire
+accessoire_index:
+    path: /accessoires
+    controller: App\Controller\FeatureController::index
+    methods: GET
+    defaults:
+        _role: ROLE_AGENT
+
+accessoire_new:
+    path: /accessoires/new
+    controller: App\Controller\AccessoireController::new
+    methods: [GET, POST]
+    defaults:
+        _role: ROLE_AGENT
+
+accessoire_show:
+    path: /accessoires/{id}
+    controller: App\Controller\AccessoireController::show
+    methods: GET
+    defaults:
+        _role: ROLE_AGENT
+
+accessoire_edit:
+    path: /accessoires/{id}/edit
+    controller: App\Controller\AccessoireController::edit
+    methods: [GET, POST]
+    defaults:
+        _role: ROLE_AGENT
+
+accessoire_delete:
+    path: /accessoires/{id}
+    controller: App\Controller\AccessoireController::delete
+    methods: DELETE
+    defaults:
+        _role: ROLE_AGENT
+
+# Routes pour Contact
+contact_index:
+    path: /contact
+    controller: App\Controller\ContactController::index
+    methods: GET
+    defaults:
+        _role: ROLE_AGENT
+
+contact_request_new:
+    path: /contact/new
+    controller: App\Controller\ContactController::new
+    methods: [GET, POST]
+
+contact_request_show:
+    path: /contact/{id}
+    controller: App\Controller\ContactController::show
+    methods: GET
+    defaults:
+        _role: ROLE_AGENT
+
+contact_request_delete:
+    path: /contact/{id}
+    controller: App\Controller\ContactController::delete
+    methods: DELETE
+    defaults:
+        _role: ROLE_AGENT
+
+# Route pour la page d'accueil
+home:
+    path: /
+    controller: App\Controller\HomeController::index
+    methods: GET
